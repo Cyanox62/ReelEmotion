@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         // To do:
         // - connect to the API here (5 mins -- once we have gcf link)
         // - take the API feedback and format it onto the page (probs like 5 mins)
+        const CLOUD_FUNCTION_URL = "https://us-central1-steel-cairn-418322.cloudfunctions.net/query-sentiment-analysis";
     });
 });
 
