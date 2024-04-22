@@ -25,9 +25,10 @@ jobs:
         name: 'Authenticate to Google Cloud'
         uses: 'google-github-actions/auth@v1'
         with:
-          workload_identity_provider: 'projects/342813690796/locations/global/workloadIdentityPools/github/attribute.repository/Cyanox62/ReelEmotion'
+          workload_identity_provider: 'projects/342813690796/locations/global/workloadIdentityPools/github/providers/my-repo'
           service_account: 'emo-cloud@steel-cairn-418322.iam.gserviceaccount.com'
-          audience: //iam.googleapis.com/projects/342813690796/locations/global/workloadIdentityPools/github/attribute.repository/Cyanox62/ReelEmotion
+          audience: //iam.googleapis.com/projects/342813690796/locations/global/workloadIdentityPools/github/providers/my-repo
+
 
       - id: 'deploy-to-cloud-functions'
         name: Deploy to Google Cloud Functions
