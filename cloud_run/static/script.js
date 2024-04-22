@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     button.addEventListener("click", function (e) {
         document.getElementById("response").innerText = "";
+        document.getElementById("score").innerText= "";
 
         let value = getValue();
         console.log(value);
