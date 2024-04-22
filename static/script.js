@@ -53,5 +53,10 @@ function updatePage(response) {
         console.log("ERROR");
     } else {
         console.log(response.score);
+
+        // Need to interpret the score
+
+        text = 'testing' + response.score;
+        document.getElementById("response").innerText += text;
     }
 }
