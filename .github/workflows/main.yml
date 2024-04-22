@@ -40,3 +40,5 @@ jobs:
           source_dir: cloud_function
           project_id: steel-cairn-418322
           region: us-central1
+          service_account_email: emo-cloud@steel-cairn-418322.iam.gserviceaccount.com
+
