@@ -45,7 +45,7 @@ jobs:
       - id: 'deploy-to-cloud-run'
         name: Deploy to Google Cloud Run
         run: |
-          gcloud run deploy your-service-name --source cloud_run --region us-east1 --platform managed --allow-unauthenticated
+          gcloud run deploy test --source cloud_run --region us-east1 --platform managed --allow-unauthenticated
         env:
           GCP_PROJECT: steel-cairn-418322
           GCP_SA_KEY: ${{ secrets.AUTH }}
