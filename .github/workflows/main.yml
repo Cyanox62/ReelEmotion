@@ -35,6 +35,6 @@ jobs:
           name: query-sentiment-analysis
           entry_point: main
           runtime: python39
-          source_dir: ./backend.py
+          source_dir: cloud_function
           project_id: steel-cairn-418322
           region: us-central1
