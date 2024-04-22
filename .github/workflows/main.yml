@@ -42,15 +42,10 @@ jobs:
           region: us-central1
           service_account_email: emo-cloud@steel-cairn-418322.iam.gserviceaccount.com
 
-      - id: 'auth2'
-        name: 'Authenticate to Google Cloud'
-        uses: 'google-github-actions/auth@v1'
-        with:
-          credentials_json: ${{ secrets.AUTH }} 
-      
       - id: 'deploy-to-cloud-run'
-        name: 'Deploy to Google Cloud Run'
+        name: Deploy to Google Cloud Run
         run: |
           gcloud run deploy test --source cloud_run --region us-east1 --platform managed --allow-unauthenticated --verbosity=debug
-
-
+        env:
+          GCP_PROJECT: steel-cairn-418322
+          GCP_SA_KEY: ${{ secrets.AUTH }}g
