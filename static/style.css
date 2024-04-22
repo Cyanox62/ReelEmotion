@@ -34,3 +34,8 @@ body {
 .form-btn {
     margin-left: 10px;
 }
+
+#response {
+    margin-top: 25px;
+    font-weight: 700;
+}

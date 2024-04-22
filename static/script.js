@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let button = document.getElementById("go-button");
 
     button.addEventListener("click", function (e) {
+        document.getElementById("response").innerText = "";
+
         let value = getValue();
         console.log(value);
         if (!value) {
@@ -49,14 +51,29 @@ function getValue() {
 }
 
 function updatePage(response) {
+    console.log(response);
     if (response.success != true) {
         console.log("ERROR");
     } else {
         console.log(response.score);
+        let score = response.score;
+        let text = "";
 
-        // Need to interpret the score
+        if (score < -.5) {
+            text = "The audience found this movie to be really bad :(";
+        } else if (score < 0) {
+            text = "The audience found this movie to be bad :(";
+        } else if (score == 0) {
+            text = "The audience found this movie to be extremely mid";
+        } else if (score < .5) {
+            text = "The audience found this movie to be decent!";
+        } else if (score < 1) {
+            text = "The audience found this movie to be excellent!!!"
+        } else {
+            console.log("Error?");
+        }
 
-        text = 'testing' + response.score;
-        document.getElementById("response").innerText += text;
+        if (text != "The audience found this movie to be ")
+            document.getElementById("response").innerText += text;
     }
 }
