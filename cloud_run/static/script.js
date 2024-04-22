@@ -53,7 +53,7 @@ function getValue() {
 function updatePage(response) {
     console.log(response);
     if (response.success != true) {
-        console.log("ERROR");
+        console.log(response.error);
     } else {
         console.log(response.score);
         let score = response.score;
