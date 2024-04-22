@@ -75,7 +75,8 @@ function updatePage(response) {
 
         normalizedScore = ((score+1)/2) * 100;
 
-        text += "<br> The audience sentiment rating was: " + parseInt(normalizedScore) + "%";
+        scoreText = "The audience sentiment rating was: " + parseInt(normalizedScore) + "%";
         document.getElementById("response").innerText += text;
+        document.getElementById('score').innerText += scoreText;
     }
 }
