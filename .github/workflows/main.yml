@@ -35,7 +35,7 @@ jobs:
         uses: google-github-actions/deploy-cloud-functions@v1
         with:
           name: query-sentiment-analysis
-          entry_point: backend
+          entry_point: main
           runtime: python39
           source_dir: cloud_function
           project_id: steel-cairn-418322
