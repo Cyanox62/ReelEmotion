@@ -73,7 +73,9 @@ function updatePage(response) {
             console.log("Error?");
         }
 
-        if (text != "The audience found this movie to be ")
-            document.getElementById("response").innerText += text;
+        normalizedScore = ((score+1)/2) * 100;
+
+        text += "<br> The audience sentiment rating was: " + parseInt(normalizedScore) + "%";
+        document.getElementById("response").innerText += text;
     }
 }
