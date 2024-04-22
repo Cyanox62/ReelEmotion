@@ -1,0 +1,40 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - id: 'auth'
+        name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          workload_identity_provider: 'projects/342813690796/locations/global/workloadIdentityPools/github/providers/Cyanox62/ReelEmotion'
+          service_account: 'emo-cloud@steel-cairn-418322.iam.gserviceaccount.com'
+
+      - id: 'deploy-to-cloud-functions'
+        name: Deploy to Google Cloud Functions
+        uses: google-github-actions/deploy-cloud-functions@v1
+        with:
+          name: query-sentiment-analysis
+          entry_point: main
+          runtime: python39
+          source_dir: ./backend.py
+          project_id: steel-cairn-418322
+          region: us-central1
