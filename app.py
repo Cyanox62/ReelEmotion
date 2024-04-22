@@ -13,16 +13,8 @@ CORS(app)  # Enable CORS for all routes and origins
 app.config['DEBUG'] = os.environ.get('FLASK_DEBUG')
 
 @app.route('/')
-def hello():
-    return "Hello World!"
-
-@app.route("/test")
-def test():
+def main():
     return render_template('ReelEmotion.html')
-
-@app.route("/test2")
-def test2():
-    return render_template("test2.html")
 
 if __name__ == '__main__':
     app.run()
