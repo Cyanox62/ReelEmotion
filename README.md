@@ -4,4 +4,4 @@ The application is hosted on cloud run, and we created a google function that, w
 
 Our form of automation was using github actions with a service account, so that any time a push was made to our repo, it was re-deployed to cloud run and cloud functions. 
 
-[The link to our site] (https://test-6yi6fed3hq-ue.a.run.app/)
+[The link to our site](https://test-6yi6fed3hq-ue.a.run.app/)
